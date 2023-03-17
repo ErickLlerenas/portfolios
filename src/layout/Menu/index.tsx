@@ -9,7 +9,7 @@ import MenuItem from "./components/MenuItem";
 
 const Menu = (): JSX.Element => {
   return (
-    <div className="gap-6 flex flex-row bg-white px-10 py-8  w-fit float-right rounded-2xl">
+    <div className="gap-6 flex flex-row bg-white px-10 py-8 w-fit float-right rounded-2xl">
       <MenuItem
         icon={<AiOutlineHome className="text-lg" />}
         label="Home"
