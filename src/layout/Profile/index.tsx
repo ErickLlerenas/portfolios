@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../../assets/profile.png";
+import profile from "../../assets/profile.jpg";
 import { CiInstagram } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { SlScreenSmartphone } from "react-icons/sl";
@@ -15,7 +15,7 @@ const Profile = (): JSX.Element => {
     <div className="flex flex-col bg-white text-center w-96 p-8 rounded-3xl mt-32">
       <img
         src={profile}
-        alt=""
+        alt="profile"
         className="w-60 h-60 m-auto rounded-3xl relative -top-40"
       />
       <div className="flex flex-col relative -mt-40">
