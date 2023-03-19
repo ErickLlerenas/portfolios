@@ -1,5 +1,9 @@
 const Home = () => {
-  return <div className="grid grid-cols-3"></div>;
+  return (
+    <div>
+      <h2>About me</h2>
+    </div>
+  );
 };
 
 export default Home;
