@@ -8,6 +8,8 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
+   
+
     <div className="layout">
       <Profile />
       <div className="content">
