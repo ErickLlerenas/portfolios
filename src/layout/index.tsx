@@ -8,13 +8,13 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
-    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-screen">
-      <div className="flex flex-row mx-16">
-        <Profile />
-        <div className="flex flex-col">
-          <Menu />
-          <div className="bg-white rounded-2xl mt-8">{children}</div>
-        </div>
+   
+
+    <div className="layout">
+      <Profile />
+      <div className="content">
+        <Menu />
+        <div className="children">{children}</div>
       </div>
     </div>
   );
