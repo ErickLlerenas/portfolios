@@ -5,9 +5,9 @@ const Home = () => {
     <div className="w-full p-16">
       <h2 className="text-4xl font-bold">About Me</h2>
       <p className="mt-6 text-lg font-normal text-gray-600">
-        I'm Creative Director and UI/UX Designer from Sydney, Australia, working
-        in web development and print media. I enjoy turning complex problems
-        into simple, beautiful and intuitive designs.
+        I'm Susan xd and UI/UX Designer from Sydney, Australia, working in web
+        development and print media. I enjoy turning complex problems into
+        simple, beautiful and intuitive designs.
       </p>
       <p className="mt-2 text-lg font-normal text-gray-600">
         My aim is to bring across your message and identity in the most creative
