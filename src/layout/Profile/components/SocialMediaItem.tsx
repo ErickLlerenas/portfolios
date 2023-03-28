@@ -1,17 +1,23 @@
-import React, { ReactNode } from "react";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface SocialMediaItemPros {
 	path: string;
-	icon: ReactNode;
+	icon: IconDefinition;
+	color: string;
 }
-const SocialMediaItem = ({ path, icon }: SocialMediaItemPros): JSX.Element => {
+
+const SocialMediaItem = ({
+	path,
+	icon,
+	color,
+}: SocialMediaItemPros): JSX.Element => {
 	return (
-		<a
-			href={path}
-			target="_blank"
-			className="bg-gray-100 rounded-xl p-2 from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-pink-500  "
-		>
-			{icon}
+		<a href={path} target="_blank" className="flex align-middle">
+			<FontAwesomeIcon
+				icon={icon}
+				className={`${color} bg-gray-100 rounded-xl p-3 my-hover`}
+			/>
 		</a>
 	);
 };

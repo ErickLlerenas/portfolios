@@ -31,3 +31,19 @@ html {
   border-radius: 20px;
   margin-top: 40px;
 }
+
+.my-hover:hover {
+  color: white;
+  background: rgb(246,97,41);
+  background: linear-gradient(100deg, rgba(246,97,41,1) 0%, rgba(228,22,73,1) 58%);
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.my-background{
+  background: rgb(246,97,41);
+  background: linear-gradient(273deg, rgba(246,97,41,1) 0%, rgba(228,22,73,1) 58%);
+  transition-duration: 300ms;  
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+}
