@@ -1,8 +1,7 @@
 import Skill from "./components/Skill";
 
-const Home = () => {
+const Home = (): JSX.Element => {
   return (
-    
     <div className="w-full p-16">
       <h2 className="text-4xl font-bold">About Me</h2>
       <p className="mt-6 text-lg font-normal text-gray-600">
@@ -52,6 +51,7 @@ const Home = () => {
           description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum incidunt
         explicabo sint perspiciatis provident recusandae."
         />
+      </div>
     </div>
   );
 };
