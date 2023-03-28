@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./layout";
+
 import Home from "./views/Home";
 import Resume from "./views/Resume";
 import Works from "./views/Works";
+
+import Layout from "./layout";
 
 function App() {
   return (
