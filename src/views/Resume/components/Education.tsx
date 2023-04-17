@@ -1,18 +1,13 @@
 import { FC } from "react";
 
-interface ExperienceProps {
+interface EducationProps {
 	title: string;
 	description: string;
 	color: string;
 	date: string;
 }
 
-const Experience: FC<ExperienceProps> = ({
-	title,
-	description,
-	color,
-	date,
-}) => {
+const Education: FC<EducationProps> = ({ title, description, color, date }) => {
 	return (
 		<div className={"p-6 rounded-lg " + color}>
 			<p className="text-gray-600">{date}</p>
@@ -22,4 +17,4 @@ const Experience: FC<ExperienceProps> = ({
 	);
 };
 
-export default Experience;
+export default Education;

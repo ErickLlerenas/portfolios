@@ -1,18 +1,16 @@
+import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Home from "./views/Home";
-import Resume from "./views/Resume";
-import Works from "./views/Works";
-import Contact from "./views/Contact";
+import { About, Resume, Works, Contact } from "./views";
 
 import Layout from "./layout";
 
-function App() {
+const App: FC = () => {
 	return (
 		<BrowserRouter>
 			<Layout>
 				<Routes>
-					<Route element={<Home />} index></Route>
+					<Route element={<About />} index></Route>
 					<Route element={<Resume />} path="/resume"></Route>
 					<Route element={<Works />} path="/works"></Route>
 					<Route element={<Contact />} path="/Contact"></Route>
@@ -20,6 +18,6 @@ function App() {
 			</Layout>
 		</BrowserRouter>
 	);
-}
+};
 
 export default App;

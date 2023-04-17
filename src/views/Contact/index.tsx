@@ -1,54 +1,63 @@
-import { useForm, SubmitHandler } from "react-hook-form";
-import { GMAIL } from "./constants";
+import { FC } from "react";
+import { useForm } from "react-hook-form";
 
-type Inputs = {
-	subject: string;
-	body: string;
-};
+import Card from "../../components/Card";
+import useContact from "./hooks/useContact";
 
-export default function App() {
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<Inputs>();
-	const onSubmit: SubmitHandler<Inputs> = (data) => {
-		const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${GMAIL}&su=${
-			data.subject
-		}&body=${encodeURIComponent(data.body)}`;
+import { Inputs } from "./types";
 
-		window.open(url, "_blank");
-	};
+const Contact: FC = () => {
+	const { register, handleSubmit } = useForm<Inputs>();
+	const { onSubmit } = useContact();
 
 	return (
-		<div className="w-full p-16">
-			<h2 className="text-4xl font-bold">Conctact</h2>
-			<div className="grid grid-cols-2 gap-8 mt-8">
-				<form onSubmit={handleSubmit(onSubmit)}>
-					<input
-						className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-						placeholder="Subject"
-						defaultValue=""
-						{...register("subject")}
-						required
-					/>
+		<Card title="Contact">
+			<div className="flex flex-col">
+				<form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+					<div>
+						<label
+							htmlFor="subject"
+							className="block mb-2 text-sm font-medium text-gray-900"
+						>
+							Mail Subject
+						</label>
 
-					<input
-						className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-						placeholder="Body"
-						defaultValue=""
-						{...register("body", { required: true })}
-						required
-					/>
-
-					<div className="pt-10">
 						<input
-							type="submit"
-							className="bg-gray-200 flex flex-col p-2.5 rounded-lg items-center text-gray-700 text-sm font-bold cursor-pointer hover:bg-gradient-to-r from-pink-500 to-orange-400 hover:text-white px-5"
+							id="subject"
+							className="shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 "
+							placeholder="Enter the mail subject..."
+							{...register("subject")}
+							required
 						/>
 					</div>
+					<div className="sm:col-span-2">
+						<label
+							htmlFor="message"
+							className="block mb-2 text-sm font-medium text-gray-900"
+						>
+							Body Message
+						</label>
+
+						<textarea
+							id="message"
+							rows={6}
+							className="block p-2.5 w-full text-sm text-gray-900 bg-gray-100 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+							placeholder="Enter your message..."
+							{...register("body", { required: true })}
+							required
+						/>
+					</div>
+
+					<button
+						type="submit"
+						className="my-background my-hover py-3 px-10 rounded-xl cursor-pointer"
+					>
+						Submit
+					</button>
 				</form>
 			</div>
-		</div>
+		</Card>
 	);
-}
+};
+
+export default Contact;
