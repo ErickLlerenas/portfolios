@@ -1,37 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { AiOutlineHome } from "react-icons/ai";
-import { HiOutlineDocumentText } from "react-icons/hi";
-import { MdWorkOutline } from "react-icons/md";
-import { RiContactsBookLine } from "react-icons/ri";
+import { FC } from "react";
+
+import {
+	faBriefcase,
+	faAddressBook,
+	faUser,
+	faFileLines,
+} from "@fortawesome/free-solid-svg-icons";
 
 import MenuItem from "./components/MenuItem";
 
-const Menu = (): JSX.Element => {
+const Menu: FC = () => {
 	return (
-		<nav>
-			<div className="gap-6 flex flex-row bg-white px-7 py-7 w-fit float-right rounded-2xl">
-				<MenuItem
-					icon={<AiOutlineHome className="text-lg" />}
-					label="Home"
-					path="/"
-				/>
-				<MenuItem
-					icon={<HiOutlineDocumentText className="text-lg" />}
-					label="Resume"
-					path="/resume"
-				/>
-				<MenuItem
-					icon={<MdWorkOutline className="text-lg" />}
-					label="Works"
-					path="/works"
-				/>
-				<MenuItem
-					icon={<RiContactsBookLine className="text-lg" />}
-					label="Contact"
-					path="/contact"
-				/>
-			</div>
+		<nav className="gap-6 flex flex-row bg-white p-2 md:p-7 w-full top-0 md:w-fit md:rounded-2xl rounded-b-2xl absolute md:relative self-center md:self-end justify-center">
+			<MenuItem icon={faUser} label="About" path="/" />
+			<MenuItem icon={faFileLines} label="Resume" path="/resume" />
+			<MenuItem icon={faBriefcase} label="Works" path="/works" />
+			<MenuItem icon={faAddressBook} label="Contact" path="/contact" />
 		</nav>
 	);
 };

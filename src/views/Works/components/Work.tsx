@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import WorkModal from "./WorkModal";
 
 interface WorkProps {
@@ -9,13 +9,13 @@ interface WorkProps {
 	description: string;
 }
 
-const Work = ({
+const Work: FC<WorkProps> = ({
 	title,
 	position,
 	color,
 	image,
 	description,
-}: WorkProps): JSX.Element => {
+}) => {
 	const [open, setOpen] = useState(false);
 
 	const handleOpen = () => {
@@ -25,7 +25,10 @@ const Work = ({
 	};
 
 	return (
-		<div className={"p-6 rounded-lg " + color} onClick={handleOpen}>
+		<div
+			className={"p-6 rounded-lg cursor-pointer " + color}
+			onClick={handleOpen}
+		>
 			<img src={image} alt={title} />
 			<p className="text-gray-600">{position}</p>
 			<h3 className="text-2xl">{title}</h3>
